@@ -1,0 +1,20 @@
+def moveZeroes(nums):
+    left = 0  # left pointer
+    right = 0  # right pointer
+
+    # Move non-zero elements to the left side of the array
+    while right < len(nums):
+        if nums[right] != 0:
+            nums[left] = nums[right]
+            left += 1
+        right += 1
+
+    # Fill the remaining elements with zeros
+    while left < len(nums):
+        nums[left] = 0
+        left += 1
+
+# Example usage:
+nums = [0, 1, 0, 3, 12]
+moveZeroes(nums)
+print(nums)
